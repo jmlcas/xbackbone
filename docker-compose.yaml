@@ -10,9 +10,8 @@ services:
       - PGID=100
       - TZ=Europe/Madrid
     volumes:
-#      - ./config:/config
       - ./config/php/php-local.ini:/config/php/php-local.ini
     ports:
-      -"8200:80"
-      -"8443:443"
+      - "8200:80"
+      - "8443:443"
     restart: unless-stopped
