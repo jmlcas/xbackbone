@@ -1,0 +1,18 @@
+version: "2.1"
+
+services:
+
+  xbackbone:
+    image: linuxserver/xbackbone
+    container_name: xbackbone
+    environment:
+      - PUID=998
+      - PGID=100
+      - TZ=Europe/Madrid
+    volumes:
+#      - ./config:/config
+      - ./config/php/php-local.ini:/config/php/php-local.ini
+    ports:
+      -"8200:80"
+      -"8443:443"
+    restart: unless-stopped
